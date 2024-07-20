@@ -34,7 +34,7 @@ python bmi_calculator.py
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Esta é uma calculadora simples de IMC (Índice de Massa Corporal) com uma interface gráfica de usuário usando PySimpleGUI.
 
