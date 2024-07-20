@@ -44,8 +44,8 @@ def evaluate_bmi_category(bmi):
 category_colors = {
     'Severe thinness': 'red',
     'Underweight': 'orange',
-    'Normal': 'green',
-    'Overweight': 'yellow',
+    'Normal': 'darkgreen',
+    'Overweight': '#E2C909',
     'Obese Class I': 'orange',
     'Obese Class II': 'red',
     'Obese Class III': 'darkred'
@@ -56,7 +56,10 @@ layout = [
     [sg.Text('Weight: '), sg.InputText(key='-WEIGHT-')],
     [sg.Text('Height: '), sg.InputText(key='-HEIGHT-')],
     [sg.Button('Calculate'), sg.Button('Exit')],
-    [sg.Text('', size=(40, 1), key='-RESULT-', text_color='black')],
+    [sg.Text('Your BMI:', size=(15, 1)), 
+     sg.Text('', size=(15, 1), key='-BMI-', text_color='black', background_color='#D3D3D3')],
+    [sg.Text('BMI Category:', size=(15, 1)), 
+     sg.Text('', size=(15, 1), key='-CATEGORY-', text_color='black', background_color='#D3D3D3')],
 ]
 
 # Window creation
@@ -73,13 +76,16 @@ while True:
             height = float(values['-HEIGHT-'])
             bmi = calculate_bmi(weight, height)
             category = evaluate_bmi_category(bmi)
-            result_text = f'BMI: {bmi:.2f}, Category: {category}'
+            result_text_bmi = f'{bmi:.2f}'
             result_color = category_colors[category]
+            result_text_category = category
         except ValueError:
-            result_text = 'Please enter valid numbers for weight and height.'
+            result_text_bmi = 'Invalid input'
             result_color = 'black'
+            result_text_category = ''
         
-        window['-RESULT-'].update(result_text, text_color=result_color)
+        window['-BMI-'].update(result_text_bmi, text_color=result_color)
+        window['-CATEGORY-'].update(result_text_category, text_color=result_color)
         
 # window closure
 window.close()
