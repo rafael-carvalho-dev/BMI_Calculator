@@ -83,24 +83,3 @@ while True:
         
 # window closure
 window.close()
-
-# def main():
-#     """
-#     Main function to start the BMI calculation and evaluation process.
-#     Prompts user for weight and height, calculates BMI, and prints the BMI and its category.
-#     """
-#     # Get weight and height from the user
-#     weight = float(input("Enter your weight in kilograms: "))
-#     height = float(input("Enter your height in meters: "))
-
-#     # Calculate BMI
-#     bmi = calculate_bmi(weight, height)
-    
-#     # Evaluate BMI category
-#     category = evaluate_bmi_category(bmi)
-
-#     # Print the BMI and its category
-#     print(f"BMI: {bmi:.2f}, Category: {category}")
-
-# if __name__ == '__main__':
-#     main()
