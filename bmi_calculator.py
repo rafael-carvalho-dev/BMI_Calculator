@@ -43,23 +43,21 @@ def evaluate_bmi_category(bmi):
 # Dictionary for mapping color categories
 category_colors = {
     'Severe thinness': 'red',
-    'Underweight': 'orange',
+    'Underweight': '#c54902', # Strong orange
     'Normal': 'darkgreen',
-    'Overweight': '#E2C909',
-    'Obese Class I': 'orange',
+    'Overweight': '#6d5703', # Very dark yellow (Olive tone)
+    'Obese Class I': '#c54902', # Strong orange
     'Obese Class II': 'red',
     'Obese Class III': 'darkred'
 }
 
 # Graphic interface layout
 layout = [
-    [sg.Text('Weight: '), sg.InputText(key='-WEIGHT-')],
-    [sg.Text('Height: '), sg.InputText(key='-HEIGHT-')],
+    [sg.Text('Weight:', size=(12, 1)), sg.InputText(key='-WEIGHT-', size=(15, 1), background_color='white', text_color='black')],
+    [sg.Text('Height:', size=(12, 1)), sg.InputText(key='-HEIGHT-', size=(15, 1), background_color='white', text_color='black')],
     [sg.Button('Calculate'), sg.Button('Exit')],
-    [sg.Text('Your BMI:', size=(15, 1)), 
-     sg.Text('', size=(15, 1), key='-BMI-', text_color='black', background_color='#D3D3D3')],
-    [sg.Text('BMI Category:', size=(15, 1)), 
-     sg.Text('', size=(15, 1), key='-CATEGORY-', text_color='black', background_color='#D3D3D3')],
+    [sg.Text('Your BMI:', size=(12, 1)), sg.Text('', size=(15, 1), key='-BMI-', text_color='black', background_color='white')],
+    [sg.Text('BMI Category:', size=(12, 1)), sg.Text('', size=(15, 1), key='-CATEGORY-', text_color='black', background_color='white')]
 ]
 
 # Window creation
